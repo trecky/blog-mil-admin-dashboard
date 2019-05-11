@@ -47,7 +47,7 @@ class ForgotPassword2Page extends Component {
 
                     <FuseAnimate animation="transition.slideUpIn" delay={300}>
                         <Typography variant="h3" color="inherit" className="font-light">
-                            Welcome to the FUSE!
+              Blog MIL Dashboard
                         </Typography>
                     </FuseAnimate>
 
