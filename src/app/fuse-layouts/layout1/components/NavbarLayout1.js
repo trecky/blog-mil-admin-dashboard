@@ -7,6 +7,7 @@ import Logo from "app/fuse-layouts/shared-components/Logo";
 import NavbarFoldedToggleButton from "app/fuse-layouts/shared-components/NavbarFoldedToggleButton";
 import NavbarMobileToggleButton from "app/fuse-layouts/shared-components/NavbarMobileToggleButton";
 import Navigation from "app/fuse-layouts/shared-components/Navigation";
+import CircularIntegration from "app/main/components/material-ui/material-ui-examples/progress/ButtonIntegration";
 
 const styles = theme => ({
   content: {
@@ -49,6 +50,8 @@ const NavbarLayout1 = ({ classes, navigation, className }) => {
 
       <FuseScrollbars className={classNames(classes.content)}>
         <UserNavbarHeader />
+
+        <CircularIntegration />
 
         <Navigation layout="vertical" />
       </FuseScrollbars>

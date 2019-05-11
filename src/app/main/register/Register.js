@@ -102,7 +102,7 @@ class Register extends Component {
 
           <FuseAnimate animation="transition.slideUpIn" delay={300}>
             <Typography variant="h3" color="inherit" className="font-light">
-              Welcome to the FUSE!
+              Blog MIL Dashboard
             </Typography>
           </FuseAnimate>
 
@@ -111,11 +111,7 @@ class Register extends Component {
               variant="subtitle1"
               color="inherit"
               className="max-w-512 mt-16"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              ullamcorper nisl erat, vel convallis elit fermentum pellentesque.
-              Sed mollis velit facilisis facilisis.
-            </Typography>
+            />
           </FuseAnimate>
         </div>
 

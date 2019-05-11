@@ -41,6 +41,7 @@ const navigationConfig = [
         type: "collapse",
         icon: "shopping_cart",
         url: "/apps/e-commerce",
+        auth: authRoles.admin,
         children: [
           {
             id: "e-commerce-products",
@@ -85,7 +86,8 @@ const navigationConfig = [
         title: "Academy",
         type: "item",
         icon: "school",
-        url: "/apps/academy"
+        url: "/apps/academy",
+        auth: authRoles.admin
       },
       {
         id: "mail",
