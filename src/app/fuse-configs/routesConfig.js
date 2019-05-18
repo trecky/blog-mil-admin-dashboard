@@ -26,10 +26,10 @@ const routeConfigs = [
     ComponentsConfig,
     UserInterfaceConfig,
     DocumentationConfig,
-    LogoutConfig
+    LogoutConfig,
+    RegisterConfig,
   ]),
   LoginConfig,
-  RegisterConfig,
   CallbackConfig
 ];
 const routes = [
