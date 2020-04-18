@@ -15,12 +15,13 @@ const styles = theme => ({
   root: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    flexDirection: "column"
   },
   wrapper: {
     margin: theme.spacing.unit,
     position: "relative",
-    marginTop: 24
+    marginTop: 24,
   },
   buttonSuccess: {
     backgroundColor: green[500],
@@ -48,12 +49,17 @@ const styles = theme => ({
 class CircularIntegration extends React.Component {
   state = {
     loading: false,
-    success: false
+    success: false,
+    urlImage: 'https://api.netlify.com/api/v1/badges/e80eaed9-7558-4534-98ec-abafb5f9579e/deploy-status'
   };
 
   componentWillUnmount() {
-    clearTimeout(this.timer);
+    clearInterval(this.urlImage);
   }
+  tickImg() {
+    this.setState({ urlImage: this.state.urlImage + Math.random() });
+  }
+
 
   handleButtonClick = () => {
     if (!this.state.loading) {
@@ -70,24 +76,26 @@ class CircularIntegration extends React.Component {
             )
             .then(function(response) {
               console.log(response);
-            })
+              this.setState({
+                loading: false,
+                success: true,
+                urlImage: this.state.urlImage + '?v='
+              });
+              this.imgID = setInterval(() => {
+                this.tickImg();
+              }, 5000);
+            }.bind(this))
             .catch(function(error) {
               console.log(error);
             });
 
-          this.timer = setTimeout(() => {
-            this.setState({
-              loading: false,
-              success: true
-            });
-          }, 180000);
         }
       );
     }
   };
 
   render() {
-    const { loading, success } = this.state;
+    const { loading, success, urlImage } = this.state;
     const { classes } = this.props;
     const buttonClassname = classNames(
       {
@@ -95,7 +103,6 @@ class CircularIntegration extends React.Component {
       },
       "px-36"
     );
-
     return (
       <div className={classes.root}>
         <div className={classes.wrapper}>
@@ -112,6 +119,7 @@ class CircularIntegration extends React.Component {
             <CircularProgress size={24} className={classes.buttonProgress} />
           )}
         </div>
+        <a href="https://app.netlify.com/sites/blogmil/deploys"><img src={urlImage}/></a>
       </div>
     );
   }
