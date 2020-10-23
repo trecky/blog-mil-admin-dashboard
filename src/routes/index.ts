@@ -1,16 +1,9 @@
 import { Router } from 'express';
 
+import postsRouter from './posts.routes';
+
 const routes = Router();
 
-routes.post('/users', (req, res) => {
-  const { name, email } = req.body;
-
-  const user = {
-    name,
-    email,
-  };
-
-  return res.json(user);
-});
+routes.use('/posts', postsRouter);
 
 export default routes;
