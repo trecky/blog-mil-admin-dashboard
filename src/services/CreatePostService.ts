@@ -1,33 +1,32 @@
 import { startOfHour } from 'date-fns';
+import { getCustomRepository } from 'typeorm';
 
 import Post from '../models/Post';
 import PostsRepository from '../repositories/PostsRepository';
 
-interface RequestDTO {
+interface Request {
+  author_id: string;
   date: Date;
-  author: string;
 }
 
 class CreatePostService {
-  private postsRepository: PostsRepository;
+  public async execute({ date, author_id }: Request): Promise<Post> {
+    const postsRepository = getCustomRepository(PostsRepository);
 
-  constructor(postsRepository: PostsRepository) {
-    this.postsRepository = postsRepository;
-  }
-
-  public execute({ date, author }: RequestDTO): Post {
     const postDate = startOfHour(date);
 
-    const findPostInSameDate = this.postsRepository.findByDate(postDate);
+    const findPostInSameDate = await postsRepository.findByDate(postDate);
 
     if (findPostInSameDate) {
       throw Error('This post is already booked');
     }
 
-    const post = this.postsRepository.create({
-      author,
+    const post = postsRepository.create({
+      author_id,
       date: postDate,
     });
+
+    await postsRepository.save(post);
 
     return post;
   }
