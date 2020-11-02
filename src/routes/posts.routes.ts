@@ -5,7 +5,11 @@ import { getCustomRepository } from 'typeorm';
 import PostsRepository from '../repositories/PostsRepository';
 import CreatePostService from '../services/CreatePostService';
 
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+
 const postsRouter = Router();
+
+postsRouter.use(ensureAuthenticated);
 
 postsRouter.get('/', async (request, response) => {
   const postsRepository = getCustomRepository(PostsRepository);
