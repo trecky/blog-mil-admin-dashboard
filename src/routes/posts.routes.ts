@@ -19,22 +19,18 @@ postsRouter.get('/', async (request, response) => {
 });
 
 postsRouter.post('/', async (request, response) => {
-  try {
-    const { author_id, date } = request.body;
+  const { author_id, date } = request.body;
 
-    const parsedDate = parseISO(date);
+  const parsedDate = parseISO(date);
 
-    const createpost = new CreatePostService();
+  const createpost = new CreatePostService();
 
-    const post = await createpost.execute({
-      date: parsedDate,
-      author_id,
-    });
+  const post = await createpost.execute({
+    date: parsedDate,
+    author_id,
+  });
 
-    return response.json(post);
-  } catch (err) {
-    return response.status(400).json({ error: err.message });
-  }
+  return response.json(post);
 });
 
 export default postsRouter;

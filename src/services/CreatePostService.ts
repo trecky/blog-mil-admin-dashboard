@@ -2,6 +2,7 @@ import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
 
 import Post from '../models/Post';
+import AppError from '../errors/AppError';
 import PostsRepository from '../repositories/PostsRepository';
 
 interface Request {
@@ -18,7 +19,7 @@ class CreatePostService {
     const findPostInSameDate = await postsRepository.findByDate(postDate);
 
     if (findPostInSameDate) {
-      throw Error('This post is already booked');
+      throw new AppError('This post is already booked');
     }
 
     const post = postsRepository.create({
