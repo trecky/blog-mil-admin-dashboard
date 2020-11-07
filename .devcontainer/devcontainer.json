@@ -26,7 +26,9 @@
 	"extensions": [
 		"dbaeumer.vscode-eslint",
 		"mtxr.sqltools",
-		"mtxr.sqltools-driver-pg"
+		"mtxr.sqltools-driver-pg",
+		"jpoissonnier.vscode-styled-components",
+		"naumovs.color-highlight"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
