@@ -56,7 +56,17 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "@typescript-eslint/ban-types": ["error",
+      {
+          "types": {
+              "{}": false,
+              "Object": false,
+              "object": false
+          },
+          "extendDefaults": true
+      }
+  ]
   },
   "settings": {
     "import/resolver": {
