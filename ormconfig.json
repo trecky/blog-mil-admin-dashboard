@@ -5,13 +5,9 @@
   "username": "postgres",
   "password": "postgres",
   "database": "blogmil_dashboard",
-  "entities": [
-    "./src/models/*.ts"
-  ],
-  "migrations": [
-    "./src/database/migrations/*.ts"
-  ],
+  "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
+  "migrations": ["./src/modules/**/infra/typeorm/migrations/*.ts"],
   "cli": {
-    "migrationsDir": "./src/database/migrations"
+    "migrationsDir": "./src/modules/**/infra/typeorm/migrations/"
   }
 }
