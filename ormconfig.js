@@ -1,10 +1,6 @@
-{
+module.exports = {
   "type": "postgres",
-  "host": "localhost",
-  "port": "5432",
-  "username": "postgres",
-  "password": "postgres",
-  "database": "blogmil_dashboard",
+  "url": process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/blogmil_dashboard",
   "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
   "migrations": ["./src/modules/**/infra/typeorm/migrations/*.ts"],
   "cli": {
