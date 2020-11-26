@@ -28,10 +28,6 @@
     "@typescript-eslint/no-unused-vars": ["error", {
       "argsIgnorePattern": "_"
     }],
-    "import/no-unresolved": [
-      2, 
-      { "caseSensitive": false }
-   ],
     "@typescript-eslint/naming-convention": [
       "error",
       {
