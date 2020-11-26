@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@blogmil_dashboard/server",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:trecky/blog-mil-admin-dashboard.git",
@@ -42,7 +42,7 @@
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "jest": "26.6.0",
+    "jest": "^26.6.3",
     "prettier": "^2.2.0",
     "ts-jest": "^26.4.4",
     "ts-node-dev": "^1.0.0",
