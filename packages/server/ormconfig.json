@@ -1,0 +1,9 @@
+{
+  "type": "postgres",
+  "url":"postgres://postgres:postgres@localhost:5432/blogmil_dashboard",
+  "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
+  "migrations": ["./src/modules/**/infra/typeorm/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/modules/**/infra/typeorm/migrations/"
+  }
+}
