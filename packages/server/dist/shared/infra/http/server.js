@@ -31,6 +31,6 @@ app.use(function (err, request, response, _) {
         message: 'Internal server error.',
     });
 });
-app.listen(process.env.port || 3333, function () {
+app.listen(process.env.PORT || 3333, function () {
     console.log('Server started');
 });

@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "build": "yarn --cwd packages/app build"
   }
 }
