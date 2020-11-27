@@ -1,9 +1,9 @@
 {
   "type": "postgres",
- "url": "postgres://ytrtpcuvgaxgfv:8b621075082644b38d96acd5ccb3a1a3855ae44fb84be4ab3b3dfc165c2be989@ec2-54-84-98-18.compute-1.amazonaws.com:5432/d2374lgr0jk5t8",
+  "url": "postgres://thivnmcqtmcmge:065da9bc591ed485b49199b3268eb30811f8c69adfb56428b365d66a362fd605@ec2-34-192-122-0.compute-1.amazonaws.com:5432/d66v1kts8dkbhi",
   "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
-  "migrations": ["./src/modules/**/infra/typeorm/migrations/*.ts"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
   "cli": {
-    "migrationsDir": "./src/modules/**/infra/typeorm/migrations/"
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }
 }
