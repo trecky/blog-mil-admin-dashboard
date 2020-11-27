@@ -1,9 +1,13 @@
 {
   "type": "postgres",
- "url": "postgres://thivnmcqtmcmge:065da9bc591ed485b49199b3268eb30811f8c69adfb56428b365d66a362fd605@ec2-34-192-122-0.compute-1.amazonaws.com:5432/d66v1kts8dkbhi",
+  "host": "localhost",
+  "port": "5432",
+  "username": "postgres",
+  "password": "postgres",
+  "database": "blogmil_dashboard",
   "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
-  "migrations": ["./src/modules/**/infra/typeorm/migrations/*.ts"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
   "cli": {
-    "migrationsDir": "./src/modules/**/infra/typeorm/migrations/"
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }
 }
