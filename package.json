@@ -8,7 +8,10 @@
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
-    "build": "yarn --cwd packages/app build"
+    "build": "yarn --cwd packages/app build",
+    "dev:server": "yarn --cwd packages/server server",
+    "dev:app": "yarn --cwd packages/app start"
   }
 }
