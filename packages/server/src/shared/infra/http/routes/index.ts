@@ -10,4 +10,6 @@ routes.use('/posts', postsRouter);
 routes.use('/users', usersRouter);
 routes.use('/sessions', sessionssRouter);
 
+routes.use('/', (req, res) => res.send('hello'));
+
 export default routes;
